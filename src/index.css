@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  
+  --color-egyptian-gold: #D4AF37;
+  --color-egyptian-black: #0F0F0F;
+  --color-egyptian-surface: #1A1A1A;
+  --color-egyptian-sand: #F4F1DE;
+}
+
+@layer base {
+  body {
+    @apply bg-egyptian-black text-egyptian-sand antialiased font-sans;
+    direction: rtl;
+  }
+}
+
+@utility geometric-bg {
+  background-image: 
+    linear-gradient(45deg, #D4AF37 25%, transparent 25%), 
+    linear-gradient(-45deg, #D4AF37 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #D4AF37 75%), 
+    linear-gradient(-45deg, transparent 75%, #D4AF37 75%);
+  background-size: 40px 40px;
+}
+
+@utility blocky-shadow {
+  box-shadow: 8px 8px 0px 0px #D4AF37;
+}
+
+@utility blocky-card {
+  @apply border-2 border-egyptian-gold bg-egyptian-surface p-6;
+}
+
+@utility rotated-diamond {
+  @apply w-10 h-10 bg-egyptian-gold rotate-45 flex items-center justify-center;
+}
+
+@utility rotated-diamond-inner {
+  @apply -rotate-45 text-egyptian-black font-black text-xl;
+}
